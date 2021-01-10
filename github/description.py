@@ -3,11 +3,8 @@ from github import Github
 from pprint import pprint
 
 
-def display_repos():
+def display_description():
     username = input("Enter the user name: ")
-    print('-'*50)
-    print("Repo details")
-    print('-'*50)
 
     g = Github()
     user = g.get_user(username)
@@ -17,13 +14,6 @@ def display_repos():
 
         print("Full name:", repo.name)
         print("Description:", repo.description)
-        print("Date created:", repo.created_at)
-        print("Date of last push:", repo.pushed_at)
-        print("Home Page:", repo.homepage)
-        print("Language:", repo.language)
-        print("Number of forks:", repo.forks)
-        print("Number of stars:", repo.stargazers_count)
-        print("-"*50)
 
     for repo in user.get_repos():
         count += 1
@@ -32,4 +22,4 @@ def display_repos():
     print('total repos :', count)
 
 
-display_repos()
+display_description()
