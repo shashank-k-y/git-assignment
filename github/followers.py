@@ -11,10 +11,9 @@ def display_followers():
     user_data = requests.get(url).json()
 
     for i in user_data:
-        follow = i
-        print("name: ", follow['login'])
-        print("id: ", follow['id'])
-        print("url: ", follow['html_url'])
+        print("name: ", i['login'])
+        print("id: ", i['id'])
+        print("url: ", i['html_url'])
         print('-'*50)
 
 
