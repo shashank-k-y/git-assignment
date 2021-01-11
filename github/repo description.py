@@ -1,6 +1,4 @@
-import base64
 from github import Github
-from pprint import pprint
 
 
 def display_description():

@@ -1,6 +1,4 @@
 import requests
-from pprint import pprint
-import json
 
 
 def display_followers():
@@ -12,15 +10,12 @@ def display_followers():
     url = f"https://api.github.com/users/{username}/followers"
     user_data = requests.get(url).json()
 
-    def disp(follow):
+    for i in user_data:
+        follow = i
         print("name: ", follow['login'])
         print("id: ", follow['id'])
         print("url: ", follow['html_url'])
-        print('-'*20)
-
-    for i in user_data:
-        follow = i
-        disp(follow)
+        print('-'*50)
 
 
 display_followers()

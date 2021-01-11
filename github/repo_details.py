@@ -1,6 +1,4 @@
-import base64
 from github import Github
-from pprint import pprint
 
 
 def display_repos():
@@ -13,8 +11,7 @@ def display_repos():
     user = g.get_user(username)
     count = 0
 
-    def print_repo(repo):
-
+    for repo in user.get_repos():
         print("Full name:", repo.name)
         print("Description:", repo.description)
         print("Date created:", repo.created_at)
@@ -24,10 +21,7 @@ def display_repos():
         print("Number of forks:", repo.forks)
         print("Number of stars:", repo.stargazers_count)
         print("-"*50)
-
-    for repo in user.get_repos():
         count += 1
-        print_repo(repo)
 
     print('total repos :', count)
 
