@@ -11,5 +11,5 @@ print("name of the repository :", f.name)
 print("description: ", f.description)
 f.edit(description=desc)
 
-# to see all the available attributes and methods
+
 print("updated description: ", f.description)
